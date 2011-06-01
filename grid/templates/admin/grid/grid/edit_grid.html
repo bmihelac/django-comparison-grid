@@ -1,0 +1,44 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% load grid_tags %}
+
+{% block breadcrumbs %}{% if not is_popup %}
+<div class="breadcrumbs">
+     <a href="{% url admin:index %}">{% trans "Home" %}</a> &rsaquo;
+     <a href="{% url admin:app_list app_label %}">{{ app_label|capfirst|escape }}</a> &rsaquo; 
+     <a href="{% url admin:grid_grid_changelist %}">{{ opts.verbose_name_plural|capfirst }}</a> &rsaquo; 
+     <a href="{% url admin:grid_grid_change grid.id %}">{{ grid|truncatewords:"18" }}</a> &rsaquo;
+     {% trans "Edit grid" %}
+</div>
+{% endif %}{% endblock %}
+
+{% block content %}
+  <div id="content-main">
+    <h1>{% trans "Edit grid" %}</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>{% trans "Feature" %}</th>
+            {% for item in grid.grid_items.all %}
+              <th>{{ item }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for feature in grid.feature_set.all %}
+            <tr>
+              <th>{{ feature.name }}</th>
+              {% for item in grid.grid_items.all %}
+                <td>
+                  {{ item|grid_feature:feature|linebreaks }}
+                  <div>
+                    <a href="{% edit_element_url feature item %}">{% trans "Edit" %}</a>
+                  </div>
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  </div>
+{% endblock %}

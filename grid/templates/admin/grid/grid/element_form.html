@@ -1,0 +1,46 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}{% if not is_popup %}
+<div class="breadcrumbs">
+     <a href="{% url admin:index %}">{% trans "Home" %}</a> &rsaquo;
+     <a href="{% url admin:app_list app_label %}">{{ app_label|capfirst|escape }}</a> &rsaquo; 
+     <a href="{% url admin:grid_grid_changelist %}">{{ opts.verbose_name_plural|capfirst }}</a> &rsaquo; 
+     <a href="{% url admin:grid_grid_change grid.id %}">{{ grid|truncatewords:"18" }}</a> &rsaquo;
+     <a href="{% url admin:grid_grid_edit_grid grid.id %}">{% trans "Edit grid" %}</a> &rsaquo;
+     {% trans "Edit grid element" %}
+</div>
+{% endif %}{% endblock %}
+
+
+{% block content %}
+  <div id="content-main">
+    <h1>{% trans "Edit grid element" %}</h1>
+    <p>
+      <label>{% trans "Grid" %}:</label>
+      <span>{{ grid }}</span>
+    </p>
+    <p>
+      <label>{% trans "Feature" %}:</label>
+      <span>{{ feature }}</span>
+    </p>
+    <p>
+      <label>{% trans "Item" %}:</label>
+      <span>{{ item }}</span>
+    </p>
+    <form action="." method="post">
+      {% csrf_token %}
+      {% if form.errors %}
+        <div>
+          <p class="errornote">{% trans "Please correct the errors below." %}</p>
+        </div>
+      {% endif %}
+
+      {{ form.as_p }}
+
+      <div>
+        <input name="submit" type="submit" value="{% trans "Submit" %}"/>
+      </div>
+    </form>
+  </div>
+{% endblock %}
