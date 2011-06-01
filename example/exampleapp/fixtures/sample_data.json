@@ -1,0 +1,187 @@
+[
+    {
+        "pk": 1, 
+        "model": "exampleapp.product", 
+        "fields": {
+            "name": "Ruby on Rails", 
+            "grids": [
+                1
+            ]
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "exampleapp.product", 
+        "fields": {
+            "name": "Django", 
+            "grids": [
+                1, 
+                2
+            ]
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "exampleapp.product", 
+        "fields": {
+            "name": "Pyjamas", 
+            "grids": [
+                2
+            ]
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "grid.grid", 
+        "fields": {
+            "name": "Framework comparison", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "grid.grid", 
+        "fields": {
+            "name": "Python frameworks", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "grid.feature", 
+        "fields": {
+            "ordering": 0, 
+            "grid": 1, 
+            "name": "Ajax", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "grid.feature", 
+        "fields": {
+            "ordering": 0, 
+            "grid": 1, 
+            "name": "Template Framework(s)", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "grid.feature", 
+        "fields": {
+            "ordering": 0, 
+            "grid": 2, 
+            "name": "ORM", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "grid.feature", 
+        "fields": {
+            "ordering": 0, 
+            "grid": 2, 
+            "name": "Testing framework(s)", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "grid.element", 
+        "fields": {
+            "text": "Prototype, script.aculo.us, jQuery", 
+            "feature": 1, 
+            "content_type": 12, 
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "grid.element", 
+        "fields": {
+            "text": "Django uses jquery in the admin, but is js-agnostic in the user templates", 
+            "feature": 1, 
+            "content_type": 12, 
+            "object_id": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "grid.element", 
+        "fields": {
+            "text": "erb, haml, etc.", 
+            "feature": 2, 
+            "content_type": 12, 
+            "object_id": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "grid.element", 
+        "fields": {
+            "text": "Django Template Language", 
+            "feature": 2, 
+            "content_type": 12, 
+            "object_id": 2
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "grid.element", 
+        "fields": {
+            "text": "Django ORM", 
+            "feature": 4, 
+            "content_type": 12, 
+            "object_id": 2
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "grid.element", 
+        "fields": {
+            "text": "no direct data access", 
+            "feature": 4, 
+            "content_type": 12, 
+            "object_id": 3
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "grid.element", 
+        "fields": {
+            "text": "doctest, unit test", 
+            "feature": 5, 
+            "content_type": 12, 
+            "object_id": 2
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "grid.element", 
+        "fields": {
+            "text": "", 
+            "feature": 5, 
+            "content_type": 12, 
+            "object_id": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2011-06-01 04:37:54", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$d4c6f$c66b2775434bdd75b90ff72fdeabea522b0aefa1", 
+            "email": "admin@example.com", 
+            "date_joined": "2011-06-01 04:37:04"
+        }
+    }
+]
