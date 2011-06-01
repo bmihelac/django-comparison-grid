@@ -1,0 +1,25 @@
+{% load grid_tags %}
+{% load i18n %}
+
+<table>
+  <thead>
+    <tr>
+      <th>{% trans "Feature" %}</th>
+      {% for item in items %}
+        <th>{{ item }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for feature in features %}
+      <tr>
+        <th>{{ feature.name }}</th>
+        {% for item in items %}
+          <td>
+            {{ item|grid_feature:feature|linebreaks }}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

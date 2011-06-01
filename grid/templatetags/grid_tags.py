@@ -23,3 +23,12 @@ def edit_element_url(feature, item):
     return reverse('admin:grid_grid_edit_element',
             args=(feature.grid.id, feature.id,
                 ContentType.objects.get_for_model(item).id, item.id))
+
+@register.inclusion_tag('grid/_display_grid.html')
+def display_grid(grid):
+    ctx = {
+            'grid': grid,
+            'features': grid.feature_set.all(),
+            'items': grid.grid_items.all(),
+            }
+    return ctx

@@ -1,0 +1,37 @@
+{% load grid_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Django-product-grid</title>
+    <style type="text/css" media="screen">
+      body {
+        margin: 1em;
+        color: #4f6b72;
+      }
+      table {
+        margin:1em 0;
+      }
+      th { border: 1px solid #C1DAD7; 
+        letter-spacing: 2px; text-align: left; padding: 6px 6px 6px 12px; background: #E8D0A9; }
+      thead th {
+        text-transform: uppercase; 
+        background: #ACD1E9;
+      }
+      tbody th {
+      }
+      td { border: 1px solid #C1DAD7; background: #fff; padding: 6px 6px 6px 12px; color: #4f6b72; }
+    </style>
+  </head>
+
+  <body>
+    {% for grid in object_list %}
+      <h1>{{ grid.name }}</h1>
+      <p>{{ grid.description }}</p>
+      {% display_grid grid %}
+    {% endfor %}
+  </body>
+</html>
+
+
+
